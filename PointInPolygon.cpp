@@ -74,7 +74,7 @@ bool IsInPolygon(const Vec2d& p, const std::vector<Vec2d>& v) // p - point, v - 
 		}
 
 		// segment intersects line
-		double x = (abs(fy) * second->x + abs(sy) * first->x) / (abs(fy) + abs(sy)); // point of intersection
+		double x = (first->x * sy - second-> * fy) / (sy - fy); // point of intersection
 
 		if (x == p.x) // 'p' lies on segment 
 			return true;
